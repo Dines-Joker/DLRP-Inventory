@@ -1,0 +1,229 @@
+/* Globale Stile */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("gta.jpg");
+    color: #e0e0e0; /* Heller Text für guten Kontrast */
+    overflow: hidden;
+}
+
+.container {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px; /* Verkleinert die maximale Breite */
+    background: rgba(30, 30, 30, 0.9); /* Dunklerer Hintergrund für Container */
+    border-radius: 30px; /* Abgerundete Ecken reduzieren */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Leichtes Schattieren */
+    padding: 30px; /* Weniger Polsterung für Kompaktheit */
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* Kopfbereich */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Weniger Abstand */
+}
+
+.logo {
+    width: 80px; /* Kleinere Logo-Größe */
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #d40000; /* Dünnerer Rand */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); /* Leichterer Schatten */
+}
+
+.text {
+    font-size: 24px; /* Kleinere Schriftgröße */
+    font-weight: bold;
+    color: #d40000;
+    letter-spacing: 1px;
+}
+
+.text2 {
+    font-size: 12px; /* Kleinere Schriftgröße */
+    color: #aaa;
+}
+
+/* Steuerungselemente */
+.controls {
+    display: flex;
+    gap: 10px; /* Weniger Abstand */
+    margin-bottom: 15px;
+}
+
+.imagebox {
+    background-color: rgba(50, 50, 50, 0.8); /* Dunkler Hintergrund */
+    padding: 5px; /* Weniger Polsterung */
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.imagebox:hover {
+    background-color: rgba(63, 63, 63, 0.6);
+    transform: scale(1.05); 
+}
+
+.imagebox i {
+    color: #fff;
+    font-size: 18px; 
+}
+
+/* Tooltip */
+.tooltiptext1 {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px; 
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.imagebox:hover .tooltiptext1 {
+    opacity: 1;
+}
+
+.line {
+    width: 100%;
+    height: 2px; 
+    background-color: #444;
+    margin: 15px 0; 
+}
+
+/* Inventar-Container */
+.inv-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 10px;
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+/* Element-Tiles */
+.item-tile {
+    background-color: rgba(50, 50, 50, 0.8); 
+    border-radius: 8px; 
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: grab;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.item-tile:active {
+    transform: scale(1.02); 
+}
+
+.item-tile:hover {
+    background-color: rgba(60, 60, 60, 0.9); 
+}
+
+.item-tile img {
+    max-width: 40px; 
+    object-fit: cover;
+    border-radius: 4px; 
+}
+
+.item-info {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 4px; 
+    text-align: center;
+}
+
+.item-tile.empty {
+    background-color: rgba(40, 40, 40, 0.4); 
+    border: 2px dashed #777;
+    cursor: default;
+}
+
+.sub-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 10px; 
+    justify-content: center;
+}
+
+.action-button {
+    background-color: rgba(40, 40, 40, 0.8);
+    padding: 8px; 
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.action-button:hover {
+    background-color: rgba(40, 40, 40, 0.6);
+    transform: scale(1.05);
+}
+
+.action-button i {
+    color: #fff;
+    font-size: 18px; 
+}
+
+/* Tooltip */
+.tooltiptext {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px; 
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.action-button:hover .tooltiptext {
+    opacity: 1;
+}
+
+.amount-input {
+    padding: 6px; 
+    border: 1px solid #666;
+    border-radius: 6px; 
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #fff;
+    width: 60px; 
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.amount-input:focus {
+    background-color: rgba(60, 60, 60, 0.8);
+    border-color: #d40000;
+}
+
+.selected {
+    border: 2px solid #d40000; 
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+}
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/2635e7f1f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container noselect">
+        <div class="head">
+            <img class="logo" src="Logo.png" alt="Logo">
+            <p class="text"><span style="color:rgb(255, 0, 0);">INVEN</span>TORY</p>
+            <p class="text2">D A R K L I F E</p>
+        </div>
+
+        <div class="controls">
+            <div class="imagebox" id="refresh">
+                <i class="fas fa-sync-alt"></i>
+                <span class="tooltiptext1">Neuladen</span>
+            </div>
+    
+            <div class="imagebox" id="close">
+                <i class="fas fa-sign-out-alt"></i> 
+                <span class="tooltiptext1">Schließen</span>
+            </div>
+        </div>
+
+        <div class="line"></div>
+        
+        <div class="inv-cont" id="invcontainer">
+            <!-- Kacheln Dynamisch -->
+        </div>
+
+
+        
+        <div class="line"></div>
+        <div class="sub-container">
+            <div class="action-button" id="use">
+                <i class="fas fa-hand-holding-medical"></i>
+                <span class="tooltiptext">Benutzen</span>
+            </div>
+            <div class="action-button" id="remove">
+                <i class="fas fa-dumpster"></i>
+                <span class="tooltiptext">Verwerfen</span>
+            </div>
+            <input class="amount-input" type="number" min="1" value="1">
+        </div>
+    </div>
+</body>
+</html>
